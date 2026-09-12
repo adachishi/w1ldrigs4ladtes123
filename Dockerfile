@@ -1,15 +1,9 @@
 FROM ubuntu:22.04
-
 ARG DEBIAN_FRONTEND=noninteractive
-ARG WILDRIG_VERSION=0.51.1
+ARG WILDRIG_VERSION
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates \
-    wget \
-    tar \
-    libcurl4 \
-    libssl3 \
-    ocl-icd-libopencl1 \
+    ca-certificates wget tar libcurl4 libssl3 ocl-icd-libopencl1 \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/wildrig
